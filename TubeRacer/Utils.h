@@ -1,12 +1,16 @@
 #pragma once
 
-#include "OpenGL-CoreLib/BezierNPoints.h"
+#include "OpenGL-CoreLib/CatmullSpline.h"
 
-#include <string_view>
+#include <string>
+#include <vector>
+#include <optional>
 
 namespace Utils
 {
-	mycoretools::BezierNPoints loadBezier(const std::string_view strView);
+	std::optional<mycoretools::CatmullSpline> loadBezier(const std::string& string);
+
+	std::vector<std::string> splitString(const std::string_view str, const char separator);
 
 };
 
