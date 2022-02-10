@@ -21,13 +21,13 @@
     <ClCompile Include="Application.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="TubeSegmentBuilder.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="TubeSegmentRenderData.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraDeveloper.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,13 +35,13 @@
     <ClInclude Include="Application.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="TubeSegmentBuilder.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="TubeSegmentRenderData.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraDeveloper.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

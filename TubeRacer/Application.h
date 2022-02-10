@@ -9,6 +9,7 @@
 
 #include "TubeSegmentBuilder.h"
 #include "TubeSegmentRenderData.h"
+#include "CameraDeveloper.h"
 
 #include <map>
 
@@ -31,9 +32,12 @@ protected:
     void onKeyEvent(int key, int scancode, int action, int mods) override;
     void onMouseMovement(double xPos, double yPos) override;
     void onMouseButton(int button, int action, int mods) override;
+    void onMouseWheel(double xoffset, double yoffsets) override;
 
 private:
-    mycoretools::Camera                         _Camera;
+    glm::uvec2                                  _MousePose{ 0,0 };
+    //mycoretools::Camera                         _Camera;
+    CameraDeveloper                             _Camera;
     mycoretools::Shader                         _ShaderTube;
     std::vector<std::string>                    _ErrorLog;
     mycoretools::CatmullSpline                  _CatmullSpline;

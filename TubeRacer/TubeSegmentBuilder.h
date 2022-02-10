@@ -25,6 +25,9 @@ public:
 	const std::vector<mycoretools::Vertex>& getVertices() const;
 
 private:
+	void calcTangendAndBiTangent(const TubeSegment& aTubeSegment, std::vector<mycoretools::Vertex>& vertices) const;
+
+private:
 	std::vector<TubeSegment>			_TubeSegments;
 	std::vector<mycoretools::Vertex>	_Vertices;
 };
