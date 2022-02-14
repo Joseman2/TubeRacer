@@ -31,7 +31,8 @@ TubeSegmentRenderData TubeSegmentRenderData::makeFromTubeSegmentBuilder(const Tu
             assert(succeed);
         }
     }
-    retData._GPUMesh.fromData(retData._Vertices, retData._Indices, mycoretools::GPUMesh::DrawMode::eGL_TRIANGLE_STRIP);
+    //retData._GPUMesh.fromData(retData._Vertices, retData._Indices, mycoretools::GPUMesh::DrawMode::eGL_TRIANGLE_STRIP);
+    retData._GPUMesh.fromData(retData._Vertices, retData._Indices, mycoretools::GPUMesh::DrawMode::eGL_TRIANGLES);
     return retData;
 }
 
@@ -39,13 +40,17 @@ void TubeSegmentRenderData::render(mycoretools::Shader& shader, const mycoretool
 {
     shader.bind();
 
-    glActiveTexture(GL_TEXTURE1);
-    if(_AbdeloTexture)
+    if (_AbdeloTexture)
+    {
+        glActiveTexture(GL_TEXTURE1);
         _AbdeloTexture->bind();
+    }
 
-    glActiveTexture(GL_TEXTURE2);
     if (_NormalTexture)
+    {
+        glActiveTexture(GL_TEXTURE2);
         _NormalTexture->bind();
+    }
 
     // Matrices
     auto locViewMatrix = shader.getUniformLocation("viewMatrix");

@@ -6,17 +6,20 @@
 #include "OpenGL-CoreLib/Texture.h"
 #include "OpenGL-CoreLib/Camera.h"
 #include "OpenGL-CoreLib/MeshGroup.h"
+#include "OpenGL-CoreLib/SkyBox.h"
+#include "OpenGL-CoreLib/Timer.h"
 
 #include "TubeSegmentBuilder.h"
 #include "TubeSegmentRenderData.h"
 #include "CameraDeveloper.h"
+#include "PlayerShip.h"
 
 #include <map>
 
 class Application : public mycoretools::ApplicationBase
 {
 public:
-	Application() = default;
+	Application();
 	~Application() override = default;
 
     bool init();
@@ -35,8 +38,10 @@ protected:
     void onMouseWheel(double xoffset, double yoffsets) override;
 
 private:
+    void setCameraFromPlayerShip();
+
+private:
     glm::uvec2                                  _MousePose{ 0,0 };
-    //mycoretools::Camera                         _Camera;
     CameraDeveloper                             _Camera;
     mycoretools::Shader                         _ShaderTube;
     std::vector<std::string>                    _ErrorLog;
@@ -47,7 +52,9 @@ private:
 
     std::vector<mycoretools::Vertex>            _Vertices;
     std::vector<std::uint32_t>                  _Indices;
-    mycoretools::GPUMesh                        _GPUMesh;
-    //std::optional<mycoretools::MeshGroup>       _MeshGroup;
-
+    mycoretools::SkyBox                         _SkyBox;
+    PlayerShip                                  _PlayerShip;
+    
+    mycoretools::Timer                          _Timer;
+    bool                                        _isTimerAllreadyStarted = false;
 };

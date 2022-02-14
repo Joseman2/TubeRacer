@@ -97,11 +97,11 @@ void CameraDeveloper::onMouseMovement(double xPos, double yPos)
     }
 }
 
-void CameraDeveloper::calcViewMatrix()
-{
-    glm::vec3 pos(cos(_VerticalAngle) * sin(_HorizontalAngle), sin(_VerticalAngle), cos(_VerticalAngle) * cos(_HorizontalAngle));
-    _Pos = pos * glm::vec3(_DistToPivot, _DistToPivot, _DistToPivot) + _Pivot;
-
-    _Dir = glm::normalize(_Pivot - _Pos);
-    _ViewMatrix = glm::lookAt(_Pos, _Pivot, { 0,1,0 });
-}
+//void CameraDeveloper::calcViewMatrix()
+//{
+//    glm::vec3 pos(cos(_VerticalAngle) * sin(_HorizontalAngle), sin(_VerticalAngle), cos(_VerticalAngle) * cos(_HorizontalAngle));
+//    _Pos = pos * glm::vec3(_DistToPivot, _DistToPivot, _DistToPivot) + _Pivot;
+//
+//    _Dir = glm::normalize(_Pivot - _Pos);
+//    _ViewMatrix = glm::lookAt(_Pos, _Pivot, { 0,1,0 });
+//}

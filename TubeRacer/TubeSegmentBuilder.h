@@ -19,13 +19,13 @@ public:
 	TubeSegmentBuilder() = default;
 	~TubeSegmentBuilder() = default;
 
-	// build tubeSegments from <path> with the length of <length>
 	void buildTubeSegments(const std::vector<mycoretools::CatmullSpline::SubPath>& subPathes);
 	const std::vector<TubeSegment>& getTubeSegments() const;
 	const std::vector<mycoretools::Vertex>& getVertices() const;
 
 private:
 	void calcTangendAndBiTangent(const TubeSegment& aTubeSegment, std::vector<mycoretools::Vertex>& vertices) const;
+	void calcNormals(const TubeSegment& aTubeSegment, std::vector<mycoretools::Vertex>& vertices) const;
 
 private:
 	std::vector<TubeSegment>			_TubeSegments;

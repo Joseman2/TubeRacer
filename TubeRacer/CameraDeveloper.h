@@ -13,8 +13,8 @@ public:
 	void onMouseButtonReleased(int keyCode) override;
 	void onMouseMovement(double xPos, double yPos) override;
 
-private:
-	void calcViewMatrix() override;
+//private:
+//	void calcViewMatrix() override;
 
 private:
 	glm::vec3       _Pivot{ 0,0,0 };

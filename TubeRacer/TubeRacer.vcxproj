@@ -162,12 +162,14 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="CameraDeveloper.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerShip.cpp" />
     <ClCompile Include="TubeSegmentBuilder.cpp" />
     <ClCompile Include="TubeSegmentRenderData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="CameraDeveloper.h" />
+    <ClInclude Include="PlayerShip.h" />
     <ClInclude Include="TubeSegmentBuilder.h" />
     <ClInclude Include="TubeSegmentRenderData.h" />
   </ItemGroup>
